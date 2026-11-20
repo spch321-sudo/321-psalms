@@ -132,7 +132,7 @@ html[data-dark="1"] .pill.on{color:#0E1412}
 }
 .chn{
   font-family:var(--mono);font-size:12px;color:var(--dusk);
-  min-width:26px;padding-top:3px;letter-spacing:-.04em
+  min-width:32px;padding-top:3px;letter-spacing:-.04em
 }
 .chrow b{font-family:var(--serif);font-size:17px;display:block;line-height:1.45}
 .chrow .s{font-size:13px;color:var(--dusk);display:block;margin-top:2px;line-height:1.6}
@@ -5215,7 +5215,7 @@ function vCourse(){
       const a = ARCS.find(x => x[1] === c.n);
       if (a) h += `<h3 class="sec">${esc(a[0])}　第 ${a[1] === a[2] ? a[1] : a[1] + '–' + a[2]} 篇　<span class="muted sm">${esc(String(a[3]).replace(/^[^：]*：/, ''))}</span></h3>`;
       h += `<button class="chrow" onclick="go('course',${c.n})">
-        <span class="chn">${String(c.n).padStart(2, '0')}</span>
+        <span class="chn">${String(c.n).padStart(3,'0')}</span>
         <span style="flex:1"><b>${esc(c.t)}</b><span class="s">${esc(c.sub)}</span>
         ${st ? `<span class="done">● ${st}/8 步</span>` : ''}${c._stub ? '<span class="done" style="color:var(--dusk)">撰寫中</span>' : ''}</span></button>`;
     });
@@ -6942,7 +6942,7 @@ function vSearch(){
       c.card.some(hit) || c.grp.some(hit) || c.safe.some(hit) || hit(c.mv.t));
     if (chs.length){ r += `<h3 class="sec">講義　${chs.length}</h3>`;
       chs.forEach(c => r += `<button class="chrow" onclick="go('course',${c.n})">
-        <span class="chn">${String(c.n).padStart(2,'0')}</span>
+        <span class="chn">${String(c.n).padStart(3,'0')}</span>
         <span style="flex:1"><b>${mk(c.t)}</b><span class="s">${mk(c.truth)}</span></span></button>`); }
     // 教學講義逐字稿
     const ls = [];
@@ -6957,7 +6957,7 @@ function vSearch(){
     });
     if (ls.length){ r += `<h3 class="sec">教學講義　${ls.length}</h3>`;
       ls.slice(0, 12).forEach(x => r += `<button class="chrow" onclick="go('course',${x[0]},'lesson')">
-        <span class="chn">${String(x[0]).padStart(2,'0')}</span>
+        <span class="chn">${String(x[0]).padStart(3,'0')}</span>
         <span style="flex:1"><b style="font-weight:400;font-size:15px;line-height:1.7">${mk(x[1].slice(0, 44))}${x[1].length > 44 ? '…' : ''}</b></span></button>`);
       if (ls.length > 12) r += `<p class="xs muted">（只顯示前 12 筆）</p>`; }
     // 軌跡
