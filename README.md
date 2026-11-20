@@ -2,7 +2,6 @@
 
 - 繁體中文：`index.html`（完整）
 - English: `en.html` (World English Bible)
-- English: `en.html` (World English Bible)
 - 简体中文：`sc.html`（完整；同一支 App 以简体开启，内嵌繁简对照表一键切换）
 
 發佈網址：https://spch321-sudo.github.io/321-psalms/
